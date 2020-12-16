@@ -101,8 +101,10 @@ available options just prior to booting the virtual machine:
 config.vm.provider "parallels" do |prl|
   prl.customize ["set", :id, "--device-set", "cdrom0", "--image",
                  "/path/to/disk.iso", "--connect"]
+  prl.customize ["set", :id, "--nested-virt", "on"]
 end
 ```
+
 
 In the example above, the virtual machine is modified to have a specified ISO
 image mounted on its virtual media device (cdrom). The `:id` parameter is
